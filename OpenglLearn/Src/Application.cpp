@@ -14,6 +14,9 @@
 #include "Shader.h"
 #include "Texture.h"
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
 
 int main(void)
 {
@@ -29,7 +32,7 @@ int main(void)
 
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(960, 540, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -50,10 +53,10 @@ int main(void)
     {
         //vertex data
         float positions[] = {
-                    -0.5f, -0.5f, 0.0f, 0.0f,//0
-                    0.5f, -0.5f, 1.0f, 0.0f,//1
-                    0.5f, 0.5f, 1.0f, 1.0f,//2
-                    -0.5f, 0.5f, 0.0f, 1.0f//3
+                    100.0f, 100.0f, 0.0f, 0.0f,//0
+                    200.0f, 100.0f, 1.0f, 0.0f,//1
+                    200.0f, 200.0f, 1.0f, 1.0f,//2
+                    100.0f, 200.0f, 0.0f, 1.0f//3
         };
 
         //vertex indexs
@@ -80,15 +83,22 @@ int main(void)
         //indexBuffer
         IndexBuffer ib(indices, 6);
 
+        //mvp
+        glm::mat4 proj = glm::ortho(0.0f, 960.f, 0.0f, 540.0f, -1.0f, 1.0f);
+        glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, 0.0f, 0.0f));
+
+        glm::mat4 mvp = proj * view;
+
         //shader
         Shader shader("res/shaders/Basic.shader");
         shader.Bind();
         shader.SetUniform4f("u_Color", 1.0f, 0.0f, 0.0f, 1.0f);
 
         //texture
-        Texture texture("res/textures/logo2.png");
+        Texture texture("res/textures/3.png");
         texture.Bind();
         shader.SetUniform1i("u_Texture", 0);
+        shader.SetUniformMat4f("u_MVP", mvp);
 
         //reset state
         va.Unbind();
