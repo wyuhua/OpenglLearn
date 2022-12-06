@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>Src\vendor;$(SolutionDir)Dependences\GLEW\include;$(SolutionDir)Dependences\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;Src\vendor;$(SolutionDir)Dependences\GLEW\include;$(SolutionDir)Dependences\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>Src\vendor;$(SolutionDir)Dependences\GLEW\include;$(SolutionDir)Dependences\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;Src\vendor;$(SolutionDir)Dependences\GLEW\include;$(SolutionDir)Dependences\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -139,7 +139,16 @@
     <ClCompile Include="Src\IndexBuffer.cpp" />
     <ClCompile Include="Src\Renderer.cpp" />
     <ClCompile Include="Src\Shader.cpp" />
+    <ClCompile Include="Src\tests\Test.cpp" />
+    <ClCompile Include="Src\tests\TestClearColor.cpp" />
     <ClCompile Include="Src\Texture.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="Src\vendor\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Src\vendor\std_image\stb_image.cpp" />
     <ClCompile Include="Src\VertexArray.cpp" />
     <ClCompile Include="Src\VertexBuffer.cpp" />
@@ -291,6 +300,8 @@
     <ClInclude Include="Src\IndexBuffer.h" />
     <ClInclude Include="Src\Renderer.h" />
     <ClInclude Include="Src\Shader.h" />
+    <ClInclude Include="Src\tests\Test.h" />
+    <ClInclude Include="Src\tests\TestClearColor.h" />
     <ClInclude Include="Src\Texture.h" />
     <ClInclude Include="Src\vendor\glm\common.hpp" />
     <ClInclude Include="Src\vendor\glm\detail\compute_common.hpp" />
@@ -579,6 +590,15 @@
     <ClInclude Include="Src\vendor\glm\vec3.hpp" />
     <ClInclude Include="Src\vendor\glm\vec4.hpp" />
     <ClInclude Include="Src\vendor\glm\vector_relational.hpp" />
+    <ClInclude Include="Src\vendor\imgui\imconfig.h" />
+    <ClInclude Include="Src\vendor\imgui\imgui.h" />
+    <ClInclude Include="Src\vendor\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="Src\vendor\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="Src\vendor\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="Src\vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="Src\vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="Src\vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="Src\vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="Src\vendor\std_image\stb_image.h" />
     <ClInclude Include="Src\VertexArray.h" />
     <ClInclude Include="Src\VertexBuffer.h" />
